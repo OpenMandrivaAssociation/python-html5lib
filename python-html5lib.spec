@@ -13,7 +13,7 @@ BuildArch:	noarch
 Source0:	http://html5lib.googlecode.com/files/%{modulename}-%{version}.zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	python-devel
+BuildRequires:	python-devel python-setuptools
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5

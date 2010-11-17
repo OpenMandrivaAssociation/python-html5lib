@@ -1,11 +1,9 @@
-%{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
-
 %define modulename	html5lib
 
 Summary:	A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
 Name:		python-%{modulename}
-Version:	0.11.1
-Release:	%mkrel 2
+Version:	0.90
+Release:	%mkrel 1
 Group:		Development/Python
 License:	MIT
 URL:		http://code.google.com/p/html5lib/

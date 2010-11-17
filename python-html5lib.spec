@@ -20,8 +20,7 @@ A python based HTML parser/tokenizer based on the WHATWG HTML5
 specification for maximum compatibility with major desktop web browsers.
 
 %prep
-unzip -qq -o %SOURCE0
-%setup -D -T -q -n %{modulename}-%{version}
+%setup -q -n %{modulename}-%{version}
 
 %build
 %{__python} setup.py build
@@ -38,7 +37,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc examples README
 %{py_puresitedir}/%{modulename}/*.py
-%{py_puresitedir}/%{modulename}/*.pyc
 %{py_puresitedir}/%{modulename}/filters
 %{py_puresitedir}/%{modulename}/serializer
 %{py_puresitedir}/%{modulename}/treebuilders

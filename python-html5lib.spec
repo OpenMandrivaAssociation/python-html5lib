@@ -40,3 +40,21 @@ rm -rf $RPM_BUILD_ROOT
 %{py_puresitedir}/%{modulename}/treebuilders
 %{py_puresitedir}/%{modulename}/treewalkers
 %{py_puresitedir}/%{modulename}-%{version}-*.egg-info
+
+
+%changelog
+* Wed Nov 17 2010 Funda Wang <fwang@mandriva.org> 0.90-1mdv2011.0
++ Revision: 598148
+- new version 0.90
+- repack zip file
+
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 0.11.1-2mdv2010.0
++ Revision: 442182
+- rebuild
+
+* Fri Jan 30 2009 Jérôme Soyer <saispo@mandriva.org> 0.11.1-1mdv2009.1
++ Revision: 335607
+- Add BR
+- import python-html5lib
+
+

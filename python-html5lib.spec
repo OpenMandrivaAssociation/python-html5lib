@@ -2,14 +2,13 @@
 
 Summary:	A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
 Name:		python-%{modulename}
-Version:	0.90
-Release:	%mkrel 1
+Version:	1.0b3
+Release:	1
 Group:		Development/Python
 License:	MIT
 URL:		http://code.google.com/p/html5lib/
 BuildArch:	noarch
-Source0:	http://html5lib.googlecode.com/files/%{modulename}-%{version}.zip
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	https://pypi.python.org/packages/source/h/html5lib/html5lib-%{version}.tar.gz
 
 BuildRequires:	python-devel python-setuptools
 
@@ -24,15 +23,12 @@ specification for maximum compatibility with major desktop web browsers.
 %{__python} setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{python_sitelib}
-%{__python} setup.py install --skip-build --root $RPM_BUILD_ROOT
+install -d %{buildroot}%{py_puresitedir}
+%{__python} setup.py install --skip-build --root %{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
 %doc examples README
 %{py_puresitedir}/%{modulename}/*.py
 %{py_puresitedir}/%{modulename}/filters
@@ -56,5 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 + Revision: 335607
 - Add BR
 - import python-html5lib
+
 
 

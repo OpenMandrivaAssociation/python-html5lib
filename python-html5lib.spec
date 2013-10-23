@@ -36,6 +36,12 @@ install -d %{buildroot}%{py_puresitedir}
 %{py_puresitedir}/%{modulename}/treebuilders
 %{py_puresitedir}/%{modulename}/treewalkers
 %{py_puresitedir}/%{modulename}-%{version}-*.egg-info
+/usr/lib/python2.7/site-packages/html5lib/treeadapters/__init__.py
+/usr/lib/python2.7/site-packages/html5lib/treeadapters/sax.py
+/usr/lib/python2.7/site-packages/html5lib/trie/__init__.py
+/usr/lib/python2.7/site-packages/html5lib/trie/_base.py
+/usr/lib/python2.7/site-packages/html5lib/trie/datrie.py
+/usr/lib/python2.7/site-packages/html5lib/trie/py.py
 
 
 %changelog

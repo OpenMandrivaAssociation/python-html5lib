@@ -29,7 +29,7 @@ install -d %{buildroot}%{py_puresitedir}
 %clean
 
 %files
-%doc examples README
+%doc  
 %{py_puresitedir}/%{modulename}/*.py
 %{py_puresitedir}/%{modulename}/filters
 %{py_puresitedir}/%{modulename}/serializer

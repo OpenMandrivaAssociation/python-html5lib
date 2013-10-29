@@ -3,7 +3,7 @@
 Summary:	A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
 Name:		python-%{modulename}
 Version:	1.0b3
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	MIT
 URL:		http://code.google.com/p/html5lib/
@@ -11,53 +11,53 @@ BuildArch:	noarch
 Source0:	https://pypi.python.org/packages/source/h/html5lib/html5lib-%{version}.tar.gz
 
 BuildRequires:	python-devel python-setuptools
+BuildRequires:  python3egg(setuptools) python3-devel
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5
 specification for maximum compatibility with major desktop web browsers.
 
-%prep
-%setup -q -n %{modulename}-%{version}
+%package -n python3-html5lib
+Summary:        A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
+Group:          Development/Python
+Requires:       python3
+ 
+%description -n python3-html5lib
+A python based HTML parser/tokenizer based on the WHATWG HTML5
+specification for maximum compatibility with major desktop web browsers.
 
-%build
-%{__python} setup.py build
+
+%prep
+%setup -q -c
+
+mv %{modulename}-%{version} python2
+cp -r python2 python3
 
 %install
-install -d %{buildroot}%{py_puresitedir}
-%{__python} setup.py install --skip-build --root %{buildroot}
+pushd python2
+%{__python} setup.py install --root=%{buildroot}
+popd
 
-%clean
+pushd python3
+%{__python3} setup.py install --root=%{buildroot}
+popd
 
-%files
-%doc  
+%files -n python-html5lib 
 %{py_puresitedir}/%{modulename}/*.py
 %{py_puresitedir}/%{modulename}/filters
 %{py_puresitedir}/%{modulename}/serializer
+%{py_puresitedir}/%{modulename}/treeadapters
 %{py_puresitedir}/%{modulename}/treebuilders
 %{py_puresitedir}/%{modulename}/treewalkers
+%{py_puresitedir}/%{modulename}/trie
 %{py_puresitedir}/%{modulename}-%{version}-*.egg-info
-/usr/lib/python2.7/site-packages/html5lib/treeadapters/__init__.py
-/usr/lib/python2.7/site-packages/html5lib/treeadapters/sax.py
-/usr/lib/python2.7/site-packages/html5lib/trie/__init__.py
-/usr/lib/python2.7/site-packages/html5lib/trie/_base.py
-/usr/lib/python2.7/site-packages/html5lib/trie/datrie.py
-/usr/lib/python2.7/site-packages/html5lib/trie/py.py
 
-
-%changelog
-* Wed Nov 17 2010 Funda Wang <fwang@mandriva.org> 0.90-1mdv2011.0
-+ Revision: 598148
-- new version 0.90
-- repack zip file
-
-* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 0.11.1-2mdv2010.0
-+ Revision: 442182
-- rebuild
-
-* Fri Jan 30 2009 Jérôme Soyer <saispo@mandriva.org> 0.11.1-1mdv2009.1
-+ Revision: 335607
-- Add BR
-- import python-html5lib
-
-
-
+%files -n python3-html5lib
+%{py3_puresitedir}/%{modulename}/*.py
+%{py3_puresitedir}/%{modulename}/filters
+%{py3_puresitedir}/%{modulename}/serializer
+%{py3_puresitedir}/%{modulename}/treeadapters
+%{py3_puresitedir}/%{modulename}/treebuilders
+%{py3_puresitedir}/%{modulename}/treewalkers
+%{py3_puresitedir}/%{modulename}/trie
+%{py3_puresitedir}/%{modulename}-%{version}-*.egg-info

@@ -11,7 +11,7 @@ BuildArch:	noarch
 Source0:	https://pypi.python.org/packages/source/h/html5lib/html5lib-%{version}.tar.gz
 
 BuildRequires:	python-devel python-setuptools
-BuildRequires:  python3egg(setuptools) python3-devel
+BuildRequires:  python3-distribute python3-devel
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5

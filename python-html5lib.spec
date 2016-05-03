@@ -54,7 +54,7 @@ popd
 %{py3_puresitedir}/%{modulename}/trie
 %{py3_puresitedir}/%{modulename}-%{version}-*.egg-info
 
-%files -n python3-html5lib
+%files -n python2-html5lib
 %{py2_puresitedir}/%{modulename}/*.py
 %{py2_puresitedir}/%{modulename}/filters
 %{py2_puresitedir}/%{modulename}/serializer

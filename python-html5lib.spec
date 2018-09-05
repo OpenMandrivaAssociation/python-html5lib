@@ -12,8 +12,7 @@ Source0:	https://github.com/html5lib/html5lib-python/archive/%{version}.tar.gz
 
 BuildRequires:	python2-devel python2-setuptools
 BuildRequires:  python3-distribute python3-devel
-
-%rename		python3-html5lib
+BuildRequires:  python2-pkg-resources
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5

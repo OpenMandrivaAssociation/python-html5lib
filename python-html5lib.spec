@@ -2,7 +2,7 @@
 
 Summary:	A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
 Name:		python-%{modulename}
-Version:	1.0b10
+Version:	1.0.1
 Release:	1
 Group:		Development/Python
 License:	MIT
@@ -45,16 +45,17 @@ pushd python3
 popd
 
 %files -n python-html5lib
-%{py3_puresitedir}/%{modulename}/*.py
+%{py3_puresitedir}/%{modulename}/*.py*
 %{py3_puresitedir}/%{modulename}/filters
 %{py3_puresitedir}/%{modulename}/treeadapters
 %{py3_puresitedir}/%{modulename}/treebuilders
 %{py3_puresitedir}/%{modulename}/treewalkers
 %{py3_puresitedir}/%{modulename}/_trie
 %{py3_puresitedir}/%{modulename}-%{version}-*.egg-info
+%{py3_puresitedir}/%{modulename}/__pycache__/*.pyc
 
 %files -n python2-html5lib
-%{py2_puresitedir}/%{modulename}/*.py
+%{py2_puresitedir}/%{modulename}/*.py*
 %{py2_puresitedir}/%{modulename}/filters
 %{py2_puresitedir}/%{modulename}/treeadapters
 %{py2_puresitedir}/%{modulename}/treebuilders

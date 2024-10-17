@@ -6,7 +6,7 @@ Version:	1.1
 Release:	3
 Group:		Development/Python
 License:	MIT
-URL:		http://code.google.com/p/html5lib/
+URL:		https://code.google.com/p/html5lib/
 BuildArch:	noarch
 Source0:	https://github.com/html5lib/html5lib-python/archive/%{version}.tar.gz
 

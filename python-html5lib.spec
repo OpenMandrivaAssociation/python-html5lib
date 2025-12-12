@@ -3,7 +3,7 @@
 Summary:	A python based HTML parser/tokenizer based on the WHATWG HTML5 specification
 Name:		python-%{modulename}
 Version:	1.1
-Release:	3
+Release:	4
 Group:		Development/Python
 License:	MIT
 URL:		https://code.google.com/p/html5lib/

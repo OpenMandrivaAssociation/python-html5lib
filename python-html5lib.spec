@@ -11,6 +11,7 @@ BuildArch:	noarch
 Source0:	https://github.com/html5lib/html5lib-python/archive/%{version}.tar.gz
 
 BuildRequires:  python3-distribute python3-devel
+BuildRequires:  python%{pyver}dist(pip)
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5

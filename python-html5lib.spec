@@ -9,6 +9,8 @@ License:	MIT
 URL:		https://code.google.com/p/html5lib/
 BuildArch:	noarch
 Source0:	https://github.com/html5lib/html5lib-python/archive/%{version}.tar.gz
+# unblock compilation on python 3.14
+Patch0:   https://patch-diff.githubusercontent.com/raw/html5lib/html5lib-python/pull/583.patch
 
 BuildRequires:  python3-distribute python3-devel
 BuildRequires:  python%{pyver}dist(pip)

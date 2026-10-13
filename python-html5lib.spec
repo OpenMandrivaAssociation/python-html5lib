@@ -11,9 +11,12 @@ BuildArch:	noarch
 Source0:	https://github.com/html5lib/html5lib-python/archive/%{version}.tar.gz
 # unblock compilation on python 3.14
 Patch0:   https://patch-diff.githubusercontent.com/raw/html5lib/html5lib-python/pull/583.patch
+# setuptools 84 dropped pkg_resources
+Patch1:   python-html5lib-1.1-no-pkg-resources.patch
 
-BuildRequires:  python3-distribute python3-devel
+BuildRequires:  pkgconfig(python3)
 BuildRequires:  python%{pyver}dist(pip)
+BuildRequires:  python%{pyver}dist(setuptools)
 
 %description
 A python based HTML parser/tokenizer based on the WHATWG HTML5
